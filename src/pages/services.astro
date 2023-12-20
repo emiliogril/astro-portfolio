@@ -1,0 +1,35 @@
+---
+import Menu from "../components/Menu.astro";
+import TitlePage from "../components/TitlePage.astro";
+import CardService from "../components/CardService.astro";
+
+const services = [
+    {
+        titulo: "Web Developev",
+        desc: "texto texto",
+    },
+    {
+        titulo: "Javascrip",
+        desc: "texto texto",
+    },
+    {
+        titulo: "Html",
+        desc: "texto texto",
+    },
+
+]
+---
+
+<Menu />
+<section class="bg-gray-200 pt-20 pb-28 px-8">
+    <div class="max-w-6xl mx-auto">
+        <TitlePage title="Services" subtitle="Here waht o offer" />
+        <div class="m-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+            {
+                services.map((item) => (
+                    <CardService title={item.titulo} desc={item.desc} />
+                ))
+            }
+        </div>
+    </div>
+</section>
